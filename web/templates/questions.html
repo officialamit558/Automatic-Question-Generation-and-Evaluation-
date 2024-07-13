@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Generated Questions</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>MCQs</h2>
+            <ul>
+                {% for mcq in mcqs %}
+                    <li>{{ mcq }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section>
+            <h2>Short Description Questions</h2>
+            <ul>
+                {% for question in short_desc %}
+                    <li>{{ question }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section>
+            <h2>Long Description Questions</h2>
+            <ul>
+                {% for question in long_desc %}
+                    <li>{{ question }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section>
+            <h2>Case Studies</h2>
+            <ul>
+                {% for case_study in case_studies %}
+                    <li>{{ case_study }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Automated Question System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

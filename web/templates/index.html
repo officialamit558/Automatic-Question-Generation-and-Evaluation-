@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Question System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Automated Question System</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Upload Content</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+        <section>
+            <h2>Generate Questions</h2>
+            <form action="/generate-questions" method="post">
+                <textarea name="content" placeholder="Enter content..."></textarea>
+                <input type="number" name="num_mcqs" placeholder="Number of MCQs">
+                <input type="number" name="num_short_desc" placeholder="Number of Short Description Questions">
+                <input type="number" name="num_long_desc" placeholder="Number of Long Description Questions">
+                <input type="number" name="num_case_studies" placeholder="Number of Case Studies">
+                <button type="submit">Generate</button>
+            </form>
+        </section>
+        <section>
+            <h2>Evaluate Answers</h2>
+            <form action="/evaluate-answers" method="post">
+                <textarea name="student_answer" placeholder="Student Answer"></textarea>
+                <textarea name="expert_answer" placeholder="Expert Answer"></textarea>
+                <button type="submit">Evaluate</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Automated Question System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
